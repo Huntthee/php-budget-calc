@@ -1,5 +1,6 @@
 <?php
-  
+
+// Lay out our Expenses over the year, month and weeks. 
 $annualExpenses = [
     "vacations" => 1000,
     "carRepairs" => 1000,    
@@ -17,6 +18,8 @@ $weeklyExpenses = [
   "entertainment" => 47
 ];
 
+
+// Factor in Taxes & Employment Insurance
 $grossSalary = 48150;
 $socialSecurity = $grossSalary * .062;
 
@@ -30,6 +33,8 @@ echo "Monthly Expenses:\n Rent: \$${monthlyExpenses["rent"]}\n Utilities: \$${mo
 
 echo "Weekly Expenses:\n Gas: \$${weeklyExpenses["gas"]}\n Food: \$${weeklyExpenses["food"]}\n Entertainment: \$${weeklyExpenses["entertainment"]}\n\n";
 
+
+// Calculate the Annual Income after taxes and expenses
 $netIncome = ($incomeSegments[0][0] * $incomeSegments[0][1])
   + ($incomeSegments[1][0] * $incomeSegments[1][1])
   + ($incomeSegments[2][0] * $incomeSegments[2][1]);
@@ -44,6 +49,8 @@ $annualIncome = $annualIncome
 
 echo "Annual Income after Annual Expenses:\n \$${annualIncome}\n\n";
 
+
+// Calculate the Monthly income after expenses
 $monthlyIncome = $annualIncome / 12;
 
 echo "Monthly Income:\n \$${monthlyIncome}\n\n";
@@ -55,6 +62,8 @@ $monthlyIncome = $monthlyIncome
 
 echo "Monthly Income after Monthly Expenses:\n \$${monthlyIncome}\n\n";
 
+
+// Calculate the weekly income after expenses
 $weeklyIncome = $monthlyIncome / 4.33;
 
 echo "Weekly Income before Expenses:\n \$${weeklyIncome}\n\n";
@@ -66,6 +75,8 @@ $weeklyIncome = $weeklyIncome
 
 echo "Weekly Income after Expenses:\n \$${weeklyIncome}\n\n";
 
+
+// And figure out how much we can save each year
 $yearlySavings = $weeklyIncome * 52;
 
 echo "Estimated Yearly Savings: \n \$${yearlySavings}";
